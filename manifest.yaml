@@ -49,14 +49,14 @@ spec:
         - containerPort: 80
         resources:
           requests:
-            cpu: 250m
+            cpu: 100m
           limits:
             cpu: 500m
         env:
         - name: REDIS
           value: "azure-vote-back"
-        imagePullSecrets:
-        - name: mysecrets
+      imagePullSecrets:
+      - name: mysecrets
 ---
 apiVersion: v1
 kind: Service
