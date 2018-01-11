@@ -45,6 +45,7 @@ spec:
       containers:
       - name: azure-vote-front
         image: azure-vote-front
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         resources:
