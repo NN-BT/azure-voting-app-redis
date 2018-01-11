@@ -1,39 +1,29 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" type="text/css" href="../static/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../static/default.css">
-    <link rel="preload" href="../static/btn-like.png" as="image">
-    <link rel="preload" href="../static/btn-like-hover.png" as="image">
-    <link rel="preload" href="../static/btn-meh.png" as="image">
-    <link rel="preload" href="../static/btn-meh-hover.png" as="image">
-    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='default.css') }}"> -->
-    <!-- <link rel="preload" href="{{ url_for('static', filename='btn-like.png') }}" as="image">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='default.css') }}">
+    <link rel="preload" href="{{ url_for('static', filename='btn-like.png') }}" as="image">
     <link rel="preload" href="{{ url_for('static', filename='btn-like-hover.png') }}" as="image">
     <link rel="preload" href="{{ url_for('static', filename='btn-meh.png') }}" as="image">
-    <link rel="preload" href="{{ url_for('static', filename='btn-meh-hover.png') }}" as="image"> -->
+    <link rel="preload" href="{{ url_for('static', filename='btn-meh-hover.png') }}" as="image">
 
     <title>{{title}}</title>
 
     <style>
         /* Have to put images here for the URL */
         .form-button__image--like {
-            background-image: url('../static/btn-like.png');
-            /* background-image: url('{{ url_for('static', filename='btn-like.png') }}'); */
+            background-image: url("{{ url_for('static', filename='btn-like.png') }}");
         }
         .form-button__image--like:hover {
-            background-image: url('../static/btn-like-hover.png');
-            /* background-image: url('{{ url_for('static', filename='btn-like-hover.png') }}'); */
+            background-image: url("{{ url_for('static', filename='btn-like-hover.png') }}");
         }
 
         .form-button__image--meh {
-            background-image: url('../static/btn-meh.png');
-            /* background-image: url('{{ url_for('static', filename='btn-meh.png') }}'); */
+            background-image: url("{{ url_for('static', filename='btn-meh.png') }}");
         }
         .form-button__image--meh:hover {
-            background-image: url('../static/btn-meh-hover.png');
-            /* background-image: url('{{ url_for('static', filename='btn-meh-hover.png') }}'); */
+            background-image: url("{{ url_for('static', filename='btn-meh-hover.png') }}");
         }
     </style>
 
@@ -46,18 +36,14 @@
 <body>
     <div class="topbar">
         <div class="topbar__content">
-            <img src="../static/logo.png" class="topbar__logo">
-            <div class="topbar__title">BitTitan Runbook Challenge</div>
-            <!-- <img src="{{ url_for('static', filename='logo.png') }}" class="topbar__logo"></div> -->
-            <!-- <div class="topbar__title">{{title}}</div> -->
+            <img src="{{ url_for('static', filename='logo.png') }}" class="topbar__logo"></div>
+            <div class="topbar__title">{{title}}</div>
         </div>
     </div>
     <div class="form">
         <div class="form__count-row">
-            <div class="form__count">25</div>
-            <div class="form__count">2</div>
-            <!-- <div class="form__count">{{value1}}</div> -->
-            <!-- <div class="form__count">{{value2}}</div> -->
+            <div class="form__count">{{value1}}</div>
+            <div class="form__count">{{value2}}</div>
         </div>
         <form class="form__button-row" id="form" name="form" action="/" method="post">
             <div class="form-button">
@@ -67,8 +53,7 @@
                 >
                     <div class="form-button__image form-button__image--like"></div>
                 </button>
-                <div class="form-button__caption">This is awesome!</div>
-                <!-- <div class="form-button__caption">{{button1}}</div> -->
+                <div class="form-button__caption">{{button1}}</div>
             </div>
             <div class="form-button">
                     <button
@@ -77,8 +62,7 @@
                 >
                     <div class="form-button__image form-button__image--meh"></div>
                 </button>
-                <div class="form-button__caption">Thanks for playing.</div>
-                <!-- <div class="form-button__caption">{{button2}}</div> -->
+                <div class="form-button__caption">{{button2}}</div>
             </div>
         </form>
     </div>
